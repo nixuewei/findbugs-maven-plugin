@@ -186,6 +186,13 @@
           </exclusion>
       </exclusions>
     </dependency>
+	
+	<!-- pmd-plugin -->
+	<dependency>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-pmd-plugin</artifactId>
+		<version>3.8</version>
+	</dependency>
 
     <!-- gmaven -->
     <dependency>
@@ -449,8 +456,23 @@
           <localCheckout>true</localCheckout>
         </configuration>
       </plugin>
+	  
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+      </plugin>
+
     </plugins>
+	
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+
   </build>
+  
   <reporting>
     <excludeDefaults>true</excludeDefaults>
     <plugins>
